@@ -3,12 +3,11 @@ import pyautogui
 
 pyautogui.PAUSE = 1
 
-
-def abrirSap():  # Abrir SAP - Transacao SP02
+def abrirSap(pswd):  # Abrir SAP - Transacao SP02
     pyautogui.hotkey("win", "d")
     pyautogui.click(x=25, y=609, clicks=2)
     time.sleep(2)
-    pyautogui.write(r"Fbc@354663")
+    pyautogui.write(pswd)
     pyautogui.press("enter")
     time.sleep(3)
 
@@ -56,8 +55,10 @@ pyautogui.alert("Olá, sou seu robo assistente.  \
     \nPara isso não mexa no pc até eu finalizar o processo!\
     \nVou avisar assim que terminar!!!")
 
+pswd = pyautogui.password('Digite sua senha', 'Login SAP', mask='*')
+
 # Abrir SAP - SP02
-abrirSap()
+abrirSap(pswd)
 
 # Salvando Relatorios
 zmmQualif()

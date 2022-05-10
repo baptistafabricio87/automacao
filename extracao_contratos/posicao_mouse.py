@@ -1,12 +1,10 @@
 import pyautogui
 import time
 
-pyautogui.failSafeCheck
-
-# pyautogui.alert("POSICIONE O MOUSE PARA CAPTURA")
-# time.sleep(3)
-# print(pyautogui.position())
-# pyautogui.alert("POSICAO CAPTURADA")
+pyautogui.alert("POSICIONE O MOUSE PARA CAPTURA")
+time.sleep(3)
+print(pyautogui.position())
+pyautogui.alert("POSICAO CAPTURADA")
 
 # posicao atalho SAP x=25, y=609
 # posicao relatorio ZMM_qualificação x=129, y=301
