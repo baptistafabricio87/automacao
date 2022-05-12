@@ -15,7 +15,8 @@ def abrirSap(pswd):  # Abrir SAP - Transacao SP02
 
 
 def configVisual():  # Configurações...
-    pygui.click(x=354, y=121)
+    pygui.sleep(2)
+    pygui.hotkey('ctrl', 'shift', 'f10')
     time.sleep(2)
     pygui.press("tab", presses=3)
     pygui.press("delete")
@@ -60,73 +61,65 @@ def moverArquivo(a, b, slp3):
 
 
 def zmmQualif(x, y, slp1, slp2, slp3):  # ZMM_Qualificação
-    pygui.click(x=130, y=300)
+    pygui.click(x, y)
     time.sleep(3)
-    # Configura Visualização
-    configVisual()
     dir_format(slp1, slp2)
     # Mover arquivo
-    moverArquivo(x, y, slp3)
+    moverArquivo(220, 520, slp3)
 
 
 def ydv1(x, y, slp1, slp2, slp3):  # YDV1
-    pygui.click(x=130, y=285)
+    pygui.click(x, y)
     time.sleep(5)
-    # Configura Visualização
     dir_format(slp1, slp2)
     # Mover arquivo
-    moverArquivo(x, y, slp3)
+    moverArquivo(220, 460, slp3)
 
 
 def zmmforn(x, y, slp1, slp2, slp3):  # ZMM_FORNECEDORES
-    pygui.click(x=130, y=270)
+    pygui.click(x, y)
     time.sleep(5)
-    # Configura Visualização
     dir_format(slp1, slp2)
     # Mover arquivo
-    moverArquivo(x, y, slp3)
+    moverArquivo(220, 500, slp3)
 
 
 def me3l(x, y, slp1, slp2, slp3):  # ME3L
-    pygui.click(x=130, y=255)
+    pygui.click(x, y)
     time.sleep(220)
-    # Configura Visualização
     dir_nformat(slp1, slp2)
     # Mover arquivo
-    moverArquivo(x, y, slp3)
+    moverArquivo(220, 420, slp3)
 
 
 def zmmcont(x, y, slp1, slp2, slp3):  # ZMM_CONTRATO
-    pygui.click(x=130, y=240)
+    pygui.click(x, y)
     time.sleep(100)
-    # Configura Visualização
     dir_format(slp1, slp2)
     # Mover arquivo
-    moverArquivo(x, y, slp3)
+    moverArquivo(220, 480, slp3)
 
 
 def acomp(x, y, slp1, slp2, slp3):  # ACOMP_PEDIDO
-    pygui.click(x=130, y=225)
+    pygui.click(x, y)
     time.sleep(20)
-    # Configura Visualização
     dir_format(slp1, slp2)
     # Mover arquivo
-    moverArquivo(x, y, slp3)
+    moverArquivo(220, 325, slp3)
 
 
 def pocont(x, y, slp1, slp2, slp3):  # POCONTRATO
-    pygui.click(x=130, y=210)
+    pygui.click(x, y)
     time.sleep(22)
-    # Configura Visualização
     dir_format(slp1, slp2)
     # Mover arquivo
-    moverArquivo(x, y, slp3)
+    moverArquivo(220, 440, slp3)
 
 
 # AVISO AO USUÁRIO - INICIANDO PROCESSO!
-pygui.alert("Olá, sou seu robo assistente.  \
+pygui.alert("Olá, sou seu robo assistente. \
     \nPreciso que não interfira no processo OK? \
-    \nPara isso não mexa no pc até eu finalizar o processo!\
+    \nPara isso não mexa no pc até eu finalizar o processo! \
     \nVou avisar assim que terminar!!!")
 
 pswd = pygui.password('Digite sua senha', 'Login SAP', mask='*')
@@ -134,15 +127,17 @@ pswd = pygui.password('Digite sua senha', 'Login SAP', mask='*')
 # Abrir SAP - SP02
 abrirSap(pswd)
 
-# Salvando Relatorios
-zmmQualif(220, 514, 3, 3)
-# ydv1(220, 462, 5, 5)
-# zmmforn(220, 501, 5, 5)
-# zmmcont(220, 479, 145, 30)
-# acomp(220, 327, 18, 8)
-# pocont(220, 441)
-me3l(220, 422, 100, 140)
+# Configura Visualização
+configVisual()
 
+# Salvando Relatorios
+ydv1(130, 301, 5, 5, 5)
+zmmQualif(130, 285, 3, 3, 3)
+zmmforn(130, 268, 8, 8, 8)
+me3l(130, 253, 140, 60, 140)
+zmmcont(130, 237, 145, 30, 30)
+acomp(130, 222, 30, 30, 30)
+pocont(130, 205, 30, 30, 30)
 
 # AVISO AO USUARIO - PROCESSO FINALIZADO
 pygui.alert("PRONTO! Terminei! \nPode continuar seu trabalho!")

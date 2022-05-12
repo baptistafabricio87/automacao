@@ -1,16 +1,19 @@
 import pyautogui
 import time
 
+# im1 = pyautogui.screenshot('myscreenshot.png')
+
 pyautogui.alert("POSICIONE O MOUSE PARA CAPTURA")
-time.sleep(3)
-print(pyautogui.position())
+for i in range(0, 7) :
+    time.sleep(2)
+    print(pyautogui.position())
 pyautogui.alert("POSICAO CAPTURADA")
 
 # posicao atalho SAP x=25, y=609
 # posicao relatorio ZMM_qualificação x=129, y=301
 # posicao configurações do relatorio x=354, y=121
 
-#KEYBOARD_KEYS)
+# KEYBOARD_KEYS
 # ['\t', '\n', '\r', ' ', '!', '"', '#', '$', '%', '&', "'", '(', ')', '*',
 #  '+', ',', '-', '.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
 #  ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', 'a', 'b',
