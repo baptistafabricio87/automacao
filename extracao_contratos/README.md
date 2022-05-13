@@ -20,5 +20,5 @@
 Utilize o comando abaixo no sue terminal para instalar o pacote do PyAutoGui
 
 ```powershell
-    PS C:\> pip install PyAutoGUI
+    pip install PyAutoGUI
 ```
