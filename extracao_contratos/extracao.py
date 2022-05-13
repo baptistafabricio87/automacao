@@ -73,6 +73,7 @@ def zmmQualif(x, y, slp1, slp2, slp3):  # ZMM_Qualificação
 
 def ydv1(x, y, slp1, slp2, slp3):  # YDV1
     pygui.click(x, y)  # seleciona relatorio
+    print('Aguardando carregar relatorio YDV1')
     time.sleep(5)
     dir_format(slp1, slp2)
     # Mover arquivo
@@ -99,7 +100,7 @@ def me3l(x, y, slp1, slp2, slp3):  # ME3L
 
 def zmmcont(x, y, slp1, slp2, slp3):  # ZMM_CONTRATO
     pygui.click(x, y)  # seleciona relatorio
-    print('Aguardando carregar relatorio ME3L')
+    print('Aguardando carregar relatorio ZMM_Contrato')
     time.sleep(100)
     dir_format(slp1, slp2)
     # Mover arquivo
@@ -108,6 +109,7 @@ def zmmcont(x, y, slp1, slp2, slp3):  # ZMM_CONTRATO
 
 def acomp(x, y, slp1, slp2, slp3):  # ACOMP_PEDIDO
     pygui.click(x, y)  # seleciona relatorio
+    print('Aguardando carregar relatorio Acomp_Pedido')
     time.sleep(20)
     dir_format(slp1, slp2)
     # Mover arquivo
@@ -116,6 +118,7 @@ def acomp(x, y, slp1, slp2, slp3):  # ACOMP_PEDIDO
 
 def pocont(x, y, slp1, slp2, slp3):  # POCONTRATO
     pygui.click(x, y)  # seleciona relatorio
+    print('Aguardando carregar relatorio POContrato')
     time.sleep(22)
     dir_format(slp1, slp2)
     # Mover arquivo
