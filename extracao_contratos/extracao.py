@@ -1,5 +1,5 @@
-from datetime import datetime
 import time
+from datetime import datetime
 
 import pyautogui as pygui
 
@@ -7,16 +7,17 @@ pygui.failSafeCheck
 pygui.PAUSE = 2
 
 
-def abrirSap(pswd):  # Abrir SAP - Transacao SP02
+def abrir_sap(pswd):  # Abrir SAP - Transacao SP02
     # pygui.hotkey('win', 'd')
     pygui.click(x=25, y=609, clicks=2)
     time.sleep(2)
     pygui.write(pswd)
     pygui.press('enter')
-    # time.sleep(3)
+    time.sleep(1)
 
 
 def configVisual():  # Configurações...
+    pygui.click(x=511, y=464)
     pygui.sleep(1)
     pygui.hotkey('ctrl', 'shift', 'f10')
     pygui.press('tab', presses=3)
@@ -25,27 +26,39 @@ def configVisual():  # Configurações...
 
 
 def dir_format(slp1, slp2):
+    dt = datetime.now()
+    print('Gravar em file local...', dt.strftime('%H:%M:%S'))
     pygui.hotkey('ctrl', 'shift', 'f12')  # Gravar em file local...
     pygui.press('down')  # Texto com tabuladores
     pygui.press('enter')
+    dt = datetime.now()
+    print('Aguardando para selecionar pasta Parametros', dt.strftime('%H:%M:%S'))
     time.sleep(slp1)
     pygui.hotkey('shift', 'tab')
     pygui.write(
         r'P:\Central_Abastecimento\Automações\Projeto de Contratos\Parametros')
     pygui.click(x=539, y=329)  # Salvar Pasta Parametros
+    dt = datetime.now()
+    print('Parametros OK, aguardando p/ mover arquivo p/ bkp',
+          dt.strftime('%H:%M:%S'))
     time.sleep(slp2)
 
 
 def dir_nformat(slp1, slp2):
+    dt = datetime.now()
+    print('Gravar em file local...', dt.strftime('%H:%M:%S'))
     pygui.hotkey('ctrl', 'shift', 'f12')  # Gravar em file local...
     pygui.press('enter')
-    print('Aguardando para selecionar Parametros')
+    dt = datetime.now()
+    print('Aguardando para selecionar Parametros', dt.strftime('%H:%M:%S'))
     time.sleep(slp1)
     pygui.hotkey('shift', 'tab')
     pygui.write(
         r'P:\Central_Abastecimento\Automações\Projeto de Contratos\Parametros')
     pygui.click(x=539, y=329)  # Seleciona Pasta Parametros
-    print('Parametros selecionado, aguadardando para mover arquivo')
+    dt = datetime.now()
+    print('Parametros OK, aguadardando p/ mover arquivo p/ bkp',
+          dt.strftime('%H:%M:%S'))
     time.sleep(slp2)
 
 
@@ -63,98 +76,80 @@ def move_arquivo(a, b, slp3):  # Move arquivo para bkp
     pygui.press('f3')  # Voltar para Lista ABAP
 
 
-def zmmQualif(x, y, slp1, slp2, slp3):  # ZMM_Qualificação
+def zmm_qualif(x, y, slp1, slp2, slp3):  # ZMM_Qualificação
     pygui.click(x, y)  # seleciona relatorio
+    dt = datetime.now()
+    print('\n Aguardando carregar relatorio ZMM_Qualificacao',
+          dt.strftime('%H:%M:%S'))
     time.sleep(3)
     dir_format(slp1, slp2)
     # Mover arquivo
+    move_arquivo(220, 540, slp3)
+    print('\n Relatorio ZMM_Qualificacao finalizado.', dt.strftime('%H:%M:%S'))
+
+
+def zmm_forn(x, y, slp1, slp2, slp3):  # ZMM_FORNECEDORES
+    pygui.click(x, y)  # seleciona relatorio
+    dt = datetime.now()
+    print('\n Aguardando carregar relatorio ZMM_Forncedores',
+          dt.strftime('%H:%M:%S'))
+    time.sleep(5)
+    dir_format(slp1, slp2)
+    # Mover arquivo
     move_arquivo(220, 520, slp3)
+    print('\n Relatorio ZMM_Fornecedores finalizado.', dt.strftime('%H:%M:%S'))
+
+
+def zmm_cont(x, y, slp1, slp2, slp3):  # ZMM_CONTRATO
+    pygui.click(x, y)  # seleciona relatorio
+    dt = datetime.now()
+    print('\n Aguardando carregar relatorio ZMM_Contrato', dt.strftime('%H:%M:%S'))
+    time.sleep(100)
+    dir_format(slp1, slp2)
+    # Mover arquivo
+    move_arquivo(220, 500, slp3)
+    print('\n Relatorio ZMM_Contrato finalizado.', dt.strftime('%H:%M:%S'))
 
 
 def ydv1(x, y, slp1, slp2, slp3):  # YDV1
     pygui.click(x, y)  # seleciona relatorio
-    print('Aguardando carregar relatorio YDV1')
+    dt = datetime.now()
+    print('\n Aguardando carregar relatorio YDV1', dt.strftime('%H:%M:%S'))
     time.sleep(5)
+    dir_format(slp1, slp2)
+    # Mover arquivo
+    move_arquivo(220, 480, slp3)
+    print('\n Relatorio YDV1 finalizado.', dt.strftime('%H:%M:%S'))
+
+
+def po_cont(x, y, slp1, slp2, slp3):  # POCONTRATO
+    pygui.click(x, y)  # seleciona relatorio
+    dt = datetime.now()
+    print('\n Aguardando carregar relatorio POContrato', dt.strftime('%H:%M:%S'))
+    time.sleep(22)
     dir_format(slp1, slp2)
     # Mover arquivo
     move_arquivo(220, 460, slp3)
-
-
-def zmmforn(x, y, slp1, slp2, slp3):  # ZMM_FORNECEDORES
-    pygui.click(x, y)  # seleciona relatorio
-    print('Aguardando carregar relatorio ZMM_Forncedores')
-    time.sleep(5)
-    dir_format(slp1, slp2)
-    # Mover arquivo
-    move_arquivo(220, 500, slp3)
+    print('\n Relatorio POContrato finalizado.', dt.strftime('%H:%M:%S'))
 
 
 def me3l(x, y, slp1, slp2, slp3):  # ME3L
     pygui.click(x, y)  # seleciona relatorio
-    print('Aguardando carregar relatorio ME3L')
-    time.sleep(210)
+    dt = datetime.now()
+    print('\n Aguardando carregar relatorio ME3L', dt.strftime('%H:%M:%S'))
+    time.sleep(300)
     dir_nformat(slp1, slp2)
     # Mover arquivo
-    move_arquivo(220, 420, slp3)
-
-
-def zmmcont(x, y, slp1, slp2, slp3):  # ZMM_CONTRATO
-    pygui.click(x, y)  # seleciona relatorio
-    print('Aguardando carregar relatorio ZMM_Contrato')
-    time.sleep(100)
-    dir_format(slp1, slp2)
-    # Mover arquivo
-    move_arquivo(220, 480, slp3)
+    move_arquivo(220, 440, slp3)
+    print('\n Relatorio ME3L finalizado.', dt.strftime('%H:%M:%S'))
 
 
 def acomp(x, y, slp1, slp2, slp3):  # ACOMP_PEDIDO
     pygui.click(x, y)  # seleciona relatorio
-    print('Aguardando carregar relatorio Acomp_Pedido')
-    time.sleep(20)
+    dt = datetime.now()
+    print('\n Aguardando carregar relatorio Acomp_Pedido', dt.strftime('%H:%M:%S'))
+    time.sleep(40)
     dir_format(slp1, slp2)
     # Mover arquivo
     move_arquivo(220, 325, slp3)
-
-
-def pocont(x, y, slp1, slp2, slp3):  # POCONTRATO
-    pygui.click(x, y)  # seleciona relatorio
-    print('Aguardando carregar relatorio POContrato')
-    time.sleep(22)
-    dir_format(slp1, slp2)
-    # Mover arquivo
-    move_arquivo(220, 440, slp3)
-
-
-# AVISO AO USUÁRIO - INICIANDO PROCESSO!
-pygui.alert('Olá, sou seu robo assistente. \
-    \nPreciso que não interfira no processo OK? \
-    \nPara isso não mexa no pc até eu finalizar o processo! \
-    \nVou avisar assim que terminar!!!')
-
-pswd = pygui.password('Digite sua senha', 'Login SAP', mask='*')
-
-dt = datetime.now()
-print('Extração Iniciada: ', dt.strftime(
-    '%d-%m-%Y, %H:%M:%S'))  # Extração iniciada
-
-# Abrir SAP - SP02
-abrirSap(pswd)
-
-# Configura Visualização
-configVisual()
-
-# Salvando Relatorios
-me3l(130, 253, 100, 40, 100)
-ydv1(130, 301, 5, 5, 5)
-zmmQualif(130, 285, 3, 3, 3)
-zmmforn(130, 268, 8, 8, 8)
-zmmcont(130, 237, 145, 30, 30)
-acomp(130, 220, 30, 30, 30)
-pocont(130, 205, 30, 30, 30)
-
-dt = datetime.now()
-# Extração finalizada.
-print('Extração Finalizada: ', dt.strftime('%d-%m-%Y, %H:%M:%S'))
-
-# AVISO AO USUARIO - PROCESSO FINALIZADO
-pygui.alert('PRONTO! Terminei! \nPode continuar seu trabalho!')
+    print('\n Relatorio Acomp_pedido finalizado.', dt.strftime('%H:%M:%S'))
