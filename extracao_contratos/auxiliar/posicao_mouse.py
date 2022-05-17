@@ -2,18 +2,16 @@ from datetime import datetime
 import time
 import pyautogui
 
-dt = datetime.now()
-
-print('iniciado ', dt.strftime('%d-%m-%Y, %H:%M:%S'))
-
+# dt = datetime.now()
+# print('iniciado ', dt.strftime('%d-%m-%Y, %H:%M:%S'))
 # im1 = pyautogui.screenshot('myscreenshot.png')
 
 pyautogui.alert("POSICIONE O MOUSE PARA CAPTURA")
-time.sleep(2)
-print(pyautogui.position())
-# for i in range(0, 7) :
-#     time.sleep(2)
-#     print(pyautogui.position())
+# time.sleep(2)
+# print(pyautogui.position())
+for i in range(0, 7) :
+    time.sleep(2)
+    print(pyautogui.position())
 pyautogui.alert("POSICAO CAPTURADA")
 
 # posicao atalho SAP x=25, y=609
