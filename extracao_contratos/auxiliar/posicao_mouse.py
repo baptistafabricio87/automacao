@@ -1,18 +1,26 @@
-from datetime import datetime 
-import time
-import pyautogui
+from datetime import datetime as dt
+from time import sleep
+import pyautogui as pg
+import pyscreeze as pys
 
-# dt = datetime.now()
-# print('iniciado ', dt.strftime('%d-%m-%Y, %H:%M:%S'))
+pg.PAUSE = 2
+
+# img_rel = 'img\spool_ydv1.png'
+# sleep(2)
+# rel_position = pg.locateCenterOnScreen(img_rel)
+# pg.click(rel_position)
+# pg.press('f6')
+
+# print('iniciado ', dt.now().strftime('%d-%m-%Y, %H:%M:%S'))
 # im1 = pyautogui.screenshot('myscreenshot.png')
 
-pyautogui.alert("POSICIONE O MOUSE PARA CAPTURA")
-# time.sleep(2)
-# print(pyautogui.position())
-for i in range(0, 7) :
-    time.sleep(2)
-    print(pyautogui.position())
-pyautogui.alert("POSICAO CAPTURADA")
+# pyautogui.alert("POSICIONE O MOUSE PARA CAPTURA")
+# # time.sleep(2)
+# # print(pyautogui.position())
+# for i in range(0, 7) :
+#     time.sleep(2)
+#     print(pyautogui.position())
+# pyautogui.alert("POSICAO CAPTURADA")
 
 # posicao atalho SAP x=25, y=609
 # posicao relatorio ZMM_qualificação x=129, y=301
