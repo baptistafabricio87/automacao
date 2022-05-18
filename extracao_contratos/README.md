@@ -1,9 +1,9 @@
-# Extrações SAP
+# Automação - Extrações SAP
 
 ### Projeto está sendo desenvolvido em Python, visando automatizar processos de extrações de relatorios do SAP.
 
 ---
-### Transações
+### Transações:
 * ME3L
 * ZMM_Contratos
 * ZMM_Fornecedores
@@ -12,13 +12,28 @@
 * Acomp_pedido
 
 ---
-### Dependencias/Bibliotecas utilizadas no projeto
+### Dependencias / Bibliotecas utilizadas no projeto
 
-* Python : 3.10.2
-* PyAutoGui : 0.9.53
+* [Python : 3.10.2](https://www.python.org)
+
+Antes de instalar os modulos abaixo pode ser necessário atualizar o gerenciador de pacotes pip, pode-se utilizar o seguinte comando no terminal:
+
+```bash
+python -m pip install --upgrade pip
+```
+
+* [PyAutoGui : 0.9.53](https://pypi.org/project/PyAutoGUI/)
+
+Utilize o comando abaixo no sue terminal para instalar o pacote do PyAutoGui:
+
+```bash
+pip install PyAutoGUI
+```
+
+* [OpenCV 4.5.5.64](https://pypi.org/project/opencv-python/)
  
-Utilize o comando abaixo no sue terminal para instalar o pacote do PyAutoGui
+Utilize o comando abaixo no sue terminal para instalar o modulo OpenCV
 
-```powershell
-    pip install PyAutoGUI
+```bash
+pip install opencv-python
 ```
