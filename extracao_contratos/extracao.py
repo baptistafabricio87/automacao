@@ -7,20 +7,22 @@ pg.failSafeCheck
 pg.PAUSE = 2
 
 
-def abrir_sap(pswd):  # Abrir SAP - Transacao SP02
-    # pg.hotkey('win', 'd')
-    img_rel = 'img\spool_ydv1.png' # Define caminho da imagem
-    rel_position = pg.locateCenterOnScreen(img_rel)
-    pg.click(rel_position, clicks=2)
+def abrir_sap():  # Abrir SAP - Transacao SP02
+    pswd = pg.password('Digite sua senha', 'Login SAP', mask='*')
+    pg.hotkey('win', 'd')
+    img_rel = 'img\\atalho_sap_sp02.png' # Define caminho da imagem a ser reconhecida
+    rel_position = pg.locateCenterOnScreen(img_rel) # Função de reconhecimento de imagem e posição
+    pg.moveTo(rel_position) # Move cursor até local da imagem reconhecida
+    pg.doubleClick() 
     sleep(2)
     pg.write(pswd)
     pg.press('enter')
-    sleep(1)
 
 # Configura visualização dos relatorios
-def configVisual():  
+def configVisual():
+    sleep(2) # Aguarda abertura do aplicativo
     pg.click(x=511, y=464) # clica na janela para manter ativa.
-    pg.hotkey('ctrl', 'shift', 'f10')
+    pg.hotkey('ctrl', 'shift', 'f10') # Abre janela de configuração de visualização
     pg.press('tab', presses=3)
     pg.press('delete')
     pg.press('enter')

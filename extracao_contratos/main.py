@@ -10,28 +10,23 @@ pg.alert('Olá, sou seu robo assistente. \
     \nPara isso não mexa no pc até eu finalizar o processo! \
     \nVou avisar assim que terminar!!!')
 
-pswd = pg.password('Digite sua senha', 'Login SAP', mask='*')
-
 # Abrir SAP - SP02
-ext.abrir_sap(pswd)
-
-dt = datetime.now()
-print('Extração Iniciada: ', dt.now().strftime(
-    '%d-%m-%Y, %H:%M:%S'))  # Extração iniciada
+ext.abrir_sap()
 
 # Configura Visualização
 ext.configVisual()
 
-# Salvando Relatorios
-ext.me3l(130, 252, 150, 60, 240)
-ext.ydv1(130, 285, 5, 5, 5)
-ext.zmm_qualif(130, 264, 3, 3, 3)
-ext.zmm_forn(130, 301, 8, 8, 8)
-ext.zmm_cont(130, 235, 180, 30, 50)
-ext.acomp(130, 218, 30, 30, 30)
-ext.po_cont(130, 205, 30, 30, 30)
+# Extração iniciada
+print('Extração Iniciada: ', dt.now().strftime('%d-%m-%Y, %H:%M:%S \n'))
 
-dt = datetime.now()
+# # Extraindo Relatorios
+# ext.me3l(130, 252, 150, 60, 240)
+# ext.ydv1(130, 285, 5, 5, 5)
+# ext.zmm_qualif(130, 264, 3, 3, 3)# ext.zmm_forn(130, 301, 8, 8, 8)
+# ext.zmm_cont(130, 235, 180, 30, 50)
+# ext.acomp(130, 218, 30, 30, 30)
+# ext.po_cont(130, 205, 30, 30, 30)
+
 # Extração finalizada.
 print('\n Extração Finalizada: ', dt.now().strftime('%d-%m-%Y, %H:%M:%S'))
 
