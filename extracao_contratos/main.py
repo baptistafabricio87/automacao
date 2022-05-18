@@ -1,22 +1,22 @@
-from datetime import datetime
+from datetime import datetime as dt
 
-import pyautogui as pygui
+import pyautogui as pg
 
 import extracao as ext
 
 # AVISO AO USUÁRIO - INICIANDO PROCESSO!
-pygui.alert('Olá, sou seu robo assistente. \
+pg.alert('Olá, sou seu robo assistente. \
     \nPreciso que não interfira no processo OK? \
     \nPara isso não mexa no pc até eu finalizar o processo! \
     \nVou avisar assim que terminar!!!')
 
-pswd = pygui.password('Digite sua senha', 'Login SAP', mask='*')
+pswd = pg.password('Digite sua senha', 'Login SAP', mask='*')
 
 # Abrir SAP - SP02
 ext.abrir_sap(pswd)
 
 dt = datetime.now()
-print('Extração Iniciada: ', dt.strftime(
+print('Extração Iniciada: ', dt.now().strftime(
     '%d-%m-%Y, %H:%M:%S'))  # Extração iniciada
 
 # Configura Visualização
@@ -33,7 +33,7 @@ ext.po_cont(130, 205, 30, 30, 30)
 
 dt = datetime.now()
 # Extração finalizada.
-print('\n Extração Finalizada: ', dt.strftime('%d-%m-%Y, %H:%M:%S'))
+print('\n Extração Finalizada: ', dt.now().strftime('%d-%m-%Y, %H:%M:%S'))
 
 # AVISO AO USUARIO - PROCESSO FINALIZADO
-pygui.alert('PRONTO! Terminei! \nPode continuar seu trabalho!')
+pg.alert('PRONTO! Terminei! \nPode continuar seu trabalho!')
