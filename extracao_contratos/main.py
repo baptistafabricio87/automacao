@@ -14,21 +14,22 @@ pg.alert('Olá, sou seu robo assistente. \
 ext.abrir_sap()
 
 # Configura Visualização
-ext.configVisual()
+ext.config_visual()
 
 # Extração iniciada
-print('Extração Iniciada: ', dt.now().strftime('%d-%m-%Y, %H:%M:%S \n'))
+print('\nExtração Iniciada: ', dt.now().strftime('%d-%m-%Y, %H:%M:%S \n'))
 
-# # Extraindo Relatorios
-# ext.me3l(130, 252, 150, 60, 240)
-# ext.ydv1(130, 285, 5, 5, 5)
-# ext.zmm_qualif(130, 264, 3, 3, 3)# ext.zmm_forn(130, 301, 8, 8, 8)
-# ext.zmm_cont(130, 235, 180, 30, 50)
-# ext.acomp(130, 218, 30, 30, 30)
-# ext.po_cont(130, 205, 30, 30, 30)
+# Extraindo Relatorios
+ext.me3l(300, 150, 60, 240)
+ext.zmm_cont(110, 180, 30, 60)
+ext.acomp(40, 30, 30, 30)
+ext.po_cont(30, 30, 30, 30)
+ext.zmm_forn(8, 8, 8, 8)
+ext.ydv1(5, 5, 5, 5)
+ext.zmm_qualif(3, 3, 3, 3)
 
 # Extração finalizada.
-print('\n Extração Finalizada: ', dt.now().strftime('%d-%m-%Y, %H:%M:%S'))
+print('\nExtração Finalizada: ', dt.now().strftime('%d-%m-%Y, %H:%M:%S'))
 
 # AVISO AO USUARIO - PROCESSO FINALIZADO
 pg.alert('PRONTO! Terminei! \nPode continuar seu trabalho!')

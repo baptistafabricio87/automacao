@@ -1,15 +1,12 @@
-from datetime import datetime as dt
-from time import sleep
 import pyautogui as pg
-import pyscreeze as pys
 
 pg.PAUSE = 2
 
-# img_rel = 'img\spool_ydv1.png'
-# sleep(2)
-# rel_position = pg.locateCenterOnScreen(img_rel)
-# pg.click(rel_position)
-# pg.press('f6')
+img_rel = 'img\\spool_ydv1.png'
+pg.sleep(2)
+rel_position = pg.locateCenterOnScreen(img_rel)
+pg.click(rel_position)
+pg.press('f6')
 
 # print('iniciado ', dt.now().strftime('%d-%m-%Y, %H:%M:%S'))
 # im1 = pyautogui.screenshot('myscreenshot.png')

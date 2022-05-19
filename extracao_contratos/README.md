@@ -27,11 +27,11 @@ python -m pip install --upgrade pip
 Utilize o comando abaixo no sue terminal para instalar o pacote do PyAutoGui:
 
 ```bash
-pip install PyAutoGUI
+pip install pyautogui
 ```
 
 * [OpenCV 4.5.5.64](https://pypi.org/project/opencv-python/)
- 
+
 Utilize o comando abaixo no sue terminal para instalar o modulo OpenCV
 
 ```bash
