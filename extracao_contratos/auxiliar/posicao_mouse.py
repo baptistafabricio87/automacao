@@ -1,15 +1,36 @@
 import pyautogui as pg
+import pyscreeze as ps
+
 
 pg.PAUSE = 2
 
-img_rel = 'img\\spool_ydv1.png'
-pg.sleep(2)
-rel_position = pg.locateCenterOnScreen(img_rel)
-pg.click(rel_position)
-pg.press('f6')
 
-# print('iniciado ', dt.now().strftime('%d-%m-%Y, %H:%M:%S'))
-# im1 = pyautogui.screenshot('myscreenshot.png')
+pg.sleep(2)
+# im1 = pg.screenshot('myscreenshot.png')
+sz = pg.locateCenterOnScreen(r'img//txt_zmm_qualif.png')
+print(sz)
+sz = pg.locateCenterOnScreen(r'img//txt_zmm_forn.png')
+print(sz)
+sz = pg.locateCenterOnScreen(r'img//txt_zmm_contrato.png')
+print(sz)
+sz = pg.locateCenterOnScreen(r'img//txt_ydv1.png')
+print(sz)
+sz = pg.locateCenterOnScreen(r'img//txt_me3l.png')
+print(sz)
+sz = pg.locateCenterOnScreen(r'img//txt_acomp.png')
+print(sz)
+sz = pg.locateCenterOnScreen(r'img//txt_po_contrato.png')
+print(sz)
+
+
+# img_rel = 'img\\txt_zmm_forn.png'
+# pg.sleep(2)
+# rel_position = pg.locateCenterOnScreen(img_rel)
+# pg.sleep(2)
+# print(rel_position)
+# pg.click(rel_position)
+# pg.press('f6')
+
 
 # pyautogui.alert("POSICIONE O MOUSE PARA CAPTURA")
 # # time.sleep(2)
@@ -19,9 +40,6 @@ pg.press('f6')
 #     print(pyautogui.position())
 # pyautogui.alert("POSICAO CAPTURADA")
 
-# posicao atalho SAP x=25, y=609
-# posicao relatorio ZMM_qualificação x=129, y=301
-# posicao configurações do relatorio x=354, y=121
 
 # KEYBOARD_KEYS
 # ['\t', '\n', '\r', ' ', '!', '"', '#', '$', '%', '&', "'", '(', ')', '*',
@@ -29,9 +47,9 @@ pg.press('f6')
 #  ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', 'a', 'b',
 #  'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
 #  'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '|', '}', '~', 'accept',
-#  'add', 'alt', 'altleft', 'altright', 'apps', 'backspace', 'browserback',
+#  'add', 'alt', 'altleft', 'altright', 'appg', 'backspace', 'browserback',
 #  'browserfavorites', 'browserforward', 'browserhome', 'browserrefresh',
-#  'browsersearch', 'browserstop', 'capslock', 'clear', 'convert', 'ctrl',
+#  'browsersearch', 'browserstop', 'capglock', 'clear', 'convert', 'ctrl',
 #  'ctrlleft', 'ctrlright', 'decimal', 'del', 'delete', 'divide', 'down',
 #  'end', 'enter', 'esc', 'escape', 'execute', 'f1', 'f10', 'f11', 'f12',
 #  'f13', 'f14', 'f15', 'f16', 'f17', 'f18', 'f19', 'f2', 'f20', 'f21', 'f22',
